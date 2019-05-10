@@ -1,0 +1,85 @@
+#wp-admin-bar-sveve .ab-empty-item:before { content: "\f467"; top: 2px; }
+
+.em-sveve-container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+
+
+	display: grid;
+
+	grid-template-areas: 
+		"tittel lukk"
+		"tekst tekst"
+		"send send";
+
+	grid-template-rows: 6rem auto 6rem;
+
+	min-width: 30rem;
+	/*min-height: 30rem;*/
+
+	width: 50%;
+	height: 30rem;
+
+	max-width: 90%;
+
+	margin: auto;
+
+	background-color: rgb(35, 40, 45);
+	z-index: 99999;
+}
+
+.em-sveve-tittel {
+	grid-area: tittel;
+
+	margin: 1rem;
+
+	color: #eee;
+	font-family: Segoe UI;
+}
+
+.em-sveve-knapp-lukk {
+	grid-area: lukk;
+
+	align-self: flex-start;
+	justify-self: right;
+
+	margin: 1rem;
+	width: 2.5rem;
+	height: 2.5rem;
+
+	border: 3px solid #eee;
+	border-radius: 100%;
+	background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, rgb(35, 40, 45) 46%,  rgb(35, 40, 45) 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, rgb(35, 40, 45) 46%,  rgb(35, 40, 45) 56%,transparent 56%, transparent 100%);
+	background-color: #eee;
+
+	cursor: pointer;
+}
+
+.em-sveve-sms-tekst {
+	grid-area: tekst;
+
+	margin: 1rem;
+}
+
+.em-sveve-knapp-send {
+	grid-area: send;
+
+	align-self: center;
+	justify-self: center;
+
+	background: none;
+	border: none;
+
+	padding: .5rem 2rem;
+
+	font-size: 2rem;
+	font-family: Segoe UI;
+
+	background-color: #eee;
+	color: rgb(35, 40, 45);
+
+	cursor: pointer;
+} 
