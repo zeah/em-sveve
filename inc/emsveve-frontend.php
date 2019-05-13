@@ -22,6 +22,8 @@ final class EM_sveve_frontend {
 	 *
 	 */
 	public function add_toolbar_items($admin_bar){
+
+		if (is_admin()) return;
 	    
 	    $admin_bar->add_menu( array(
 	        'id'    => 'sveve',

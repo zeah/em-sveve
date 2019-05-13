@@ -22,11 +22,11 @@ final class EM_sveve_ajax {
 		// echo preg_replace('/\r\n|\n|\r/', '%0a', $_POST['text']);
 		// exit;
 
-		// $opt = get_option('em_sveve');
+		$opt = get_option('em_sveve');
 
-		// if (isset($opt['url'])) $opt = $opt['url'];
+		if (isset($opt['url'])) $opt = $opt['url'];
 
-		// if (!filter_var($opt, FILTER_VALIDATE_URL)) exit;
+		if (!filter_var($opt, FILTER_VALIDATE_URL)) exit;
 
 		// $response = wp_remote_get($opt);
 		// print_r($response);
@@ -45,6 +45,8 @@ final class EM_sveve_ajax {
 		// exit;
 
 
+		print_r($_POST);
+
 		$text = (isset($_POST['text']) ? $_POST['text'] : '') .'%0a'. (isset($_POST['link']) ? $_POST['link'] : '');
 
 		$data = [
@@ -56,10 +58,11 @@ final class EM_sveve_ajax {
 			'gender' => isset($_POST['gender']) ? $_POST['gender'] : ''
 		];
 
+		print_r($data);
+		exit;
 
 		wp_remote_get(trim($opt).'?'.http_build_query($data), ['blocking' => false]);
 
-		print_r($data);
 
 		exit;
 	}
